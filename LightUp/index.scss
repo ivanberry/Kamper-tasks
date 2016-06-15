@@ -203,3 +203,40 @@ body.on{
 }
 
 
+.pesude {
+  position: relative;
+  width: 9rem;
+  height: 9rem;
+  border: 2px solid green;
+
+  background-color: #fff;
+  z-index:10;
+
+  box-sizing: border-box;
+}
+
+.pesude:before {
+  position: absolute;
+  content: '';
+  display: block;
+  border: 3px solid #000;
+  // background-color: yellow;
+  // opacity: .3;
+
+  top: 2px;
+  bottom: 2px;
+  right: 2px;
+  left: 2px;
+}
+.pesude:after {
+  position: absolute;
+  content: '';
+  display: block;
+  border: 3px solid red;
+  // opacity: .8;
+
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
