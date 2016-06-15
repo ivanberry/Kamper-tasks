@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="UTF-8">
-        <title>Light it up</title>
-				<link rel="stylesheet" href="index.css">
-</head>
-<body>
 
-		<section class="wrapper">
-		        <div class="switch">
-		                <button class="toggle"></button>
-		        </div>
-		        <div class="bulb">
-		                <div class="glass">
-		                       <div class="filament"></div>
-		                </div>
-		                <div class="stem"></div>
-		        </div>
-		</section>
-        
+<head>
+	<meta charset="UTF-8">
+	<title>Light it up</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body class="on">
+
+	<section class="wrapper">
+		<div class="switch">
+			<button class="toggle"></button>
+		</div>
+		<div class="bulb">
+			<div class="glass">
+				<div class="filament"></div>
+			</div>
+			<div class="stem"></div>
+		</div>
+	</section>
+
+	<section class="pesude"></section>
+<script>
+
+var body = document.querySelector('body');
+var button = document.querySelector('.toggle');
+button.addEventListener('click',function(){
+	body.classList.toggle('on');
+	console.log("yeah");
+},false);
+
+</script>
 </body>
+
 </html>

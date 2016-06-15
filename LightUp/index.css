@@ -1,4 +1,6 @@
 .switch {
+  display: block;
+  z-index: 1;
   width: 15%;
   background: #2a3f47;
   transition: background 200ms;
@@ -14,11 +16,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 2rem;
   height: 4rem;
+  margin: auto;
+  transition: all .2s;
   border: 0;
   outline: none;
+  transform: translate(-50%, -50%);
   cursor: pointer; }
   .toggle:before, .toggle:after {
     display: flex;
@@ -38,7 +42,7 @@
     content: 'off';
     bottom: 0;
     left: 0;
-    transition: all 200ms; }
+    transition: all .2s; }
 
 .wrapper {
   display: flex;
@@ -47,16 +51,18 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: #011c26;
+  background: #011C26;
   transition: all 200ms; }
   .wrapper:after {
     content: '';
+    display: block;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: radial-gradient(transparent, rgba(1, 28, 38, 0.6)); }
+    background: radial-gradient(transparent, rgba(1, 28, 38, 0.6));
+    z-index: -1; }
 
 .bulb {
   width: 15%;
@@ -66,7 +72,7 @@
   .bulb:after {
     content: '';
     display: block;
-    padding: 100%; }
+    padding-top: 200%; }
 
 .glass {
   position: absolute;
@@ -76,21 +82,22 @@
   bottom: 0;
   left: 0;
   opacity: .2;
-  background: rgba(217, 241, 241, 0.2);
+  background: rgba(217, 241, 250, 0.2);
   border-radius: 100%/40%;
   transform: rotateX(-20deg); }
   .glass:after {
     content: '';
+    display: block;
     position: absolute;
     top: 2%;
     right: 5%;
     bottom: 5%;
     left: 5%;
-    background: linear-gradient(#d9f1f1, transparent);
+    background: linear-gradient(rgba(217, 241, 250, 0.1), transparent);
     border-radius: 100%/40%; }
 
 .filament {
-  border: 3px solid #011c26;
+  border: 3px solid #011C26;
   position: absolute;
   top: 20%;
   right: 30%;
@@ -98,7 +105,7 @@
   left: 30%;
   border-radius: 30%/5%;
   z-index: 1;
-  transition: all 200ms; }
+  transition: all .2s; }
 
 .stem {
   position: absolute;
@@ -137,18 +144,32 @@ body.on .toggle:after {
 body.on .wrapper {
   background: #058abb; }
 body.on .glass {
-  background: rgba(217, 241, 241, 0.8);
+  background: rgba(217, 241, 250, 0.8);
   opacity: .8;
-  box-shadow: 0 0 2rem #ccc; }
+  box-shadow: 0 0 2rem #fff; }
 body.on .filament {
   border-color: #fff;
   box-shadow: 0 0 4rem rgba(255, 255, 255, 0.5);
-  animation: pulse 3s infinite; }
+  animation: pulse 2s infinite; }
 body.on .stem:after {
-  opacity: 0; }
+  opacity: .5; }
 
 @keyframes pulse {
   50% {
     box-shadow: 0 0 3rem white; } }
+.pesude {
+  position: absolute;
+  border: 1px solid green;
+  width: 2rem;
+  height: 2rem;
+  background-color: red;
+  z-index: 3; }
+
+.pesude:after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 20px;
+  border: 1px solid red; }
 
 /*# sourceMappingURL=index.css.map */
