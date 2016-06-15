@@ -203,22 +203,3 @@ body.on{
 }
 
 
-.pesude {
-  position: absolute;
-  border: 1px solid green;
-
-  width: 2rem;
-  height: 2rem;
-
-  background-color: red;
-  z-index: 3;
-}
-
-.pesude:after {
-  content: '';
-  display: block;
-  width: 10px;
-  height: 20px;
-  border: 1px solid red;
-
-}
