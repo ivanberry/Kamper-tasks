@@ -42,7 +42,51 @@ button.addEventListener('click', function(){
 
 2. 伪元素的运用
 
+### 文档流中
+
+![文档流位置关系](./images/boxnormal.png)
+
+### 它们之间存在有堆叠关系时
+
 ![盒子关系](./images/boxposition.png)
+
+```html
+    <section class="pesude"></section>
+```
+
+```css
+.pesude {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  border: 2px solid green;
+
+  background-color: lightgreen;
+  z-index:10;
+}
+
+.pesude:before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  border: 2px solid orange;
+  background-color: yellow;
+  opacity: .3;
+}
+.pesude:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  border: 2px solid red;
+  opacity: .8;
+}
+```
+
+![盒子前后存在的位置关系](./images/stackposition.png)
 
 
 
