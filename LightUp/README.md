@@ -115,7 +115,7 @@ x
 
 个人这里一直有一个误会关于坐标系统的：
 
-![./images/coord_in_R2.png]
+![坐标系统](./images/coord_in_R2.png)
 
 - rotate()
 围绕某点旋转，正值为顺时针方向，负值为逆时针方向
