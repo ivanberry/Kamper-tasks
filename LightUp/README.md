@@ -23,6 +23,7 @@ button.addEventListener('click', function(){
 + 返回元素节点对象
 
 + 选择器遵守CSS选择器语法
+x
 
 遍历文档后找不到一个返回`null`,兼容性：
 
