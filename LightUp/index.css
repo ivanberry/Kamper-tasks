@@ -25,9 +25,12 @@
   transform: translate(-50%, -50%);
   cursor: pointer; }
   .toggle:before, .toggle:after {
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
     position: absolute;
     width: 2rem;
     height: 2rem;
@@ -45,6 +48,7 @@
     transition: all .2s; }
 
 .wrapper {
+  display: -ms-flexbox;
   display: flex;
   position: fixed;
   top: 0;
@@ -187,5 +191,3 @@ body.on .stem:after {
   bottom: 0;
   right: 0;
   left: 0; }
-
-/*# sourceMappingURL=index.css.map */

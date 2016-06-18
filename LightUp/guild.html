@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>蒙版特效</title>
+    <style>
+
+        html, body {
+            min-height: 100%;
+            font-size: 20px;
+        }
+
+        @media screen and (min-width:321px) and (max-width: 375px) {
+            html, body {
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            html, body {
+                font-size: 15px;
+            }
+        }
+
+        section {
+            position: relative;
+            text-align: center;
+            width: 68%;
+            
+            margin: auto;
+            padding-top: 5rem;
+
+            overflow: hidden;
+
+        }
+        section img {
+            width: 100%;
+        }
+
+        .frame {
+            position: relative;
+            z-index: 1;
+        }
+
+        .frame-block {
+            display: block;
+            z-index: 2;
+        }
+
+        /* 调出菜单 */
+        .guild-frame {
+            position: absolute;
+            animation: translateY 2s 1s forwards;
+            z-index: -1;
+            left: 5%;
+            width: 100%;
+        }
+
+        @keyframes translateY {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-12.5rem);
+            }
+        }
+
+        /* 点击动画 */
+        .icon-handy {
+            position: absolute;
+            top: 9.5rem;
+            right: .8rem;
+
+            width: 2rem;
+            height: 2rem;
+            background: url(./images/handy-guild.png) no-repeat center center;
+            background-size: contain;
+            z-index: 2;
+            animation: handy 1s .5s,
+                       handyMove 1s 1.5s forwards;
+        }
+
+        /* 点击特效 */
+        @keyframes handy {
+            from {
+                transform: scale(.8);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            to {
+                transform: scale(.6);
+            }
+        }
+
+        /* 点击移动 */
+        @keyframes handyMove {
+            to {
+                transform: translate(-2.4rem, 12.5rem);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<section>
+    <i class="icon-handy"></i>
+    <div class="frame">
+        <img src="./images/guild-withoutframe.png" alt="手机框" class="frame-block">
+        <img src="./images/guild-frame.png" alt="调出菜单" class="guild-frame">
+    </div>
+</section>
+</body>
+</html>

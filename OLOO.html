@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OLOO code style</title>
+</head>
+<body>
+<p>OO VS OLOO</p>
+<script>
+    var Widget = {
+        // 定义一个初始化函数,this值没有什么意思，它只能在被调用时(call-site)才
+        //有明确的指向
+        init: function(width, height) {
+            this.width = width||50;
+            this.height = height||50;
+            this.$elem = null;
+        },
+        insert: function($where) {
+            if(this.$elem) {
+                this.$elem.css( {
+                    width: this.width + 'px',
+                    height: this.height + 'px'
+                }).appendTo($where);
+            }
+        }
+    };
+
+    //进程Widget，创建子类
+    var Button = Object.create( Widget );
+
+    Button.setup = function(widht, height, label){
+        //delegation call
+        this.init( width, height );
+        this.label = label || 'Default';
+
+        this.$elem = $('<button>').text(this.label);
+    };
+
+    Button.build = function($where) {
+        //delegation call
+        this.insert($where);
+        this.$elem.click(this.onClick.bind(this));
+    };
+
+    Button.onClick = function(evt) {
+        console.log("Button '" + this.label + "' clicked! ");
+    };
+
+    $(document).ready(function(){
+        var $body = $(document.body);
+
+        var btn1 = Object.create( Button );
+        btn1.setup(125, 30, "Hello");
+
+        btn1.build($body);
+
+    });
+
+</script>
+</body>
+</html>

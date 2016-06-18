@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>蒙版特效</title>
+    <script src="./coverGuild.js" defer></script>
+    <style>
+
+        html, body {
+            min-height: 100%;
+        }
+        
+        .cover {
+            display: none;
+            position: absolute;
+            width: 0; height: 0;
+            left: 0; top: 0; right: 0; bottom: 0;
+            border: 0 solid #000;
+            opacity: .75;
+            z-index: 9;
+            /* 过渡效果 */
+            transition: all .25s;
+            /* 边缘闪动问题fix */
+            box-shadow: 0 0 0 100px #000;
+            overflow: hidden;
+        }
+        .cover::before {
+            content: '';
+            width: 100%; height:100%;
+            border-radius: 50%;
+            border: 400px solid #000;
+            position: absolute;
+            left: -400px; top: -400px;
+            box-shadow: inset 0 0 5px 2px rgba(0,0,0,.75);
+        }
+
+        section {
+            position: relative;
+            border: 1px solid green;
+            text-align: center;
+            width: 68%;
+            margin: auto;
+        }
+        section img {
+            width: 100%;
+        }
+        .target {
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+<section>
+    <img class="target" src="./cute_dog.jpeg" alt="指引页面" width="100">
+    <h2 class="target">xxx</h2>
+</section>
+<div class="cover" id="cover"></div>
+</body>
+</html>

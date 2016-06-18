@@ -1,0 +1,140 @@
+
+        html, body {
+            min-height: 100%;
+            font-size: 20px;
+        }
+
+        @media screen and (min-width:321px) and (max-width: 375px) {
+            html, body {
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            html, body {
+                font-size: 15px;
+            }
+        }
+
+        section {
+            position: relative;
+            text-align: center;
+            width: 68%;
+           
+            margin: auto;
+            padding-top: 5rem;
+
+            overflow: hidden;
+
+        }
+        section img {
+            width: 100%;
+        }
+
+        .frame {
+            position: relative;
+            z-index: 1;
+        }
+
+        .frame-block {
+            display: block;
+            z-index: 2;
+        }
+
+        /* 调出菜单 */
+        .guild-frame {
+            position: absolute;
+            -webkit-animation: translateY 2s 1s forwards;
+                    animation: translateY 2s 1s forwards;
+            z-index: -1;
+            left: 5%;
+            width: 100%;
+        }
+
+        @-webkit-keyframes translateY {
+            from {
+                -webkit-transform: translateY(0);
+                        transform: translateY(0);
+            }
+            to {
+                -webkit-transform: translateY(-12.5rem);
+                        transform: translateY(-12.5rem);
+            }
+        }
+
+        @keyframes translateY {
+            from {
+                -webkit-transform: translateY(0);
+                        transform: translateY(0);
+            }
+            to {
+                -webkit-transform: translateY(-12.5rem);
+                        transform: translateY(-12.5rem);
+            }
+        }
+
+        /* 点击动画 */
+        .icon-handy {
+            position: absolute;
+            top: 9.5rem;
+            right: .8rem;
+
+            width: 2rem;
+            height: 2rem;
+            background: url(./images/handy-guild.png) no-repeat center center;
+            background-size: contain;
+            z-index: 2;
+            -webkit-animation: handy 1s .5s,
+                       handyMove 1s 1.5s forwards;
+                    animation: handy 1s .5s,
+                       handyMove 1s 1.5s forwards;
+        }
+
+        /* 点击特效 */
+        @-webkit-keyframes handy {
+            from {
+                -webkit-transform: scale(.8);
+                        transform: scale(.8);
+            }
+            50% {
+                -webkit-transform: scale(1.2);
+                        transform: scale(1.2);
+            }
+            to {
+                -webkit-transform: scale(.6);
+                        transform: scale(.6);
+            }
+        }
+        @keyframes handy {
+            from {
+                -webkit-transform: scale(.8);
+                        transform: scale(.8);
+            }
+            50% {
+                -webkit-transform: scale(1.2);
+                        transform: scale(1.2);
+            }
+            to {
+                -webkit-transform: scale(.6);
+                        transform: scale(.6);
+            }
+        }
+
+        /* 点击移动 */
+        @-webkit-keyframes handyMove {
+            to {
+                -webkit-transform: translate(-2.4rem, 12.5rem);
+                        transform: translate(-2.4rem, 12.5rem);
+            }
+        }
+        @keyframes handyMove {
+            to {
+                -webkit-transform: translate(-2.4rem, 12.5rem);
+                        transform: translate(-2.4rem, 12.5rem);
+            }
+        }
+
+
+
+
+
