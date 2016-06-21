@@ -43,13 +43,10 @@ x
 
 2. 伪元素的运用
 
-### 文档流中
-
-![文档流位置关系](./images/boxnormal.png)
 
 ### 它们之间存在有堆叠关系时
 
-![盒子关系](./images/boxposition.png)
+![盒子关系](./images/boxposition.jpg)
 
 ```html
     <section class="pesude"></section>
